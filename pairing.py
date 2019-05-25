@@ -1,6 +1,8 @@
 import json
 import requests
 import slackapi
+import sys
+
 slackapi._slack_token()
 
 try:
@@ -23,8 +25,19 @@ while True:
         'black_tz': slackapi._get_user_info(slackapi._get_user_id(black_player), 'tz')
         })
     elif answer.upper() == 'S':
-        break
+		with open('pairings.json', 'w') as db:
+    json.dump(pairings, db)
+		break
     else:
         print('huh ? Try again !')
-with open('pairings.json', 'w') as db:
-    json.dump(pairings, db)
+        
+status = input('(P) Make Group DMs, (E) Exit')
+
+if status.upper() == 'P':
+	for i in range(100)
+		try:
+			white = pairings[i][white_player]
+			black = pairings[i][black_player]
+			slackapi._create_group_dm(f'{white}, {black}')
+elif status.upper() == 'E':
+	sys.exit()

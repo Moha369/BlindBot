@@ -17,7 +17,7 @@ while True:
         slack_profiles.append({
             'slack_name': slack_name,
             'slack_id': slack_id,
-            'tz': slackapi._get_user_info(slack_id)
+            'tz': slackapi._get_user_info(slack_id, 'tz')
             })
     elif answer.upper() == 'IMPORT ENTRIES' or answer.upper() == 'W':
         break

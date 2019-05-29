@@ -28,7 +28,9 @@ while True:
         with open('pairings.json', 'w') as db:
             json.dump(pairings, db)
     elif answer.upper() == 'S':
-        break
+		with open('pairings.json', 'w') as db:
+    json.dump(pairings, db)
+		break
     else:
         print('huh ? Try again !')
 

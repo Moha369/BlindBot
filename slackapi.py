@@ -1,8 +1,9 @@
 import requests
 import json
+import settings
 
 def _auth():
-    slack_token =
+    slack_token = settings.SLACK_TOKEN
     return slack_token
 
 def _get_user_id(user_name):
@@ -44,7 +45,7 @@ def close_conversation(channel):
     r = requests.post(url, params={'token': _auth(), 'channel': channel})
 
 def get_utc(zone):
-    r = requests.get('https://api.timezonedb.com/v2.1/list-time-zone', params={'key': <Your Key>, 'format': 'json', 'zone': zone, 'fields': 'gmtOffset'})
+    r = requests.get('https://api.timezonedb.com/v2.1/list-time-zone', params={'key': settings.TIMEZONE_DB_TOKEN, 'format': 'json', 'zone': zone, 'fields': 'gmtOffset'})
     final = r.json()['zones'][0]['gmtOffset'] /60/60
     final = int(final)
     if final >= 0:

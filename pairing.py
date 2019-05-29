@@ -62,8 +62,8 @@ if channels_creator.upper() == 'YES':
                 time.sleep(1)
             else:
                 slackapi.create_group_dm('%s, %s' % (white_p, black_p))
-                channel_id = slackapi.create_group_dm('%s, %s, UBBGAAALB' % (white_p, black_p))
+                channel_id = slackapi.create_group_dm('%s, %s' % (white_p, black_p))
                 time.sleep(1)
-                slackapi.leave_channel(channel_id)"""
+                slackapi.close_conversation(channel_id)
     except IndexError:
         pass

@@ -57,7 +57,7 @@ if channels_creator.upper() == 'YES':
                 channel_id = slackapi.create_group_dm('%s, %s' % (white_p, black_p))
                 time.sleep(1)
             elif black_p == '<Your ID>':
-                slackapi.create_group_dm('%s' % (black_p))
+                slackapi.create_group_dm('%s' % (white_p))
                 channel_id = slackapi.create_group_dm('%s, %s' % (white_p, black_p))
                 time.sleep(1)
             else:

@@ -51,4 +51,4 @@ def get_utc(zone):
     if final >= 0:
         return (f"UTC+{final}")
     else:
-        return f"UTC-{final}"
+        return f"UTC{final}"

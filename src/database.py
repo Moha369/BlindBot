@@ -9,8 +9,8 @@ except FileNotFoundError:
     slack_profiles = []
 
 while True:
-    answer = input('List new pairing (L) Import entries (W)')
-    if answer.upper() == 'NEW PAIRINGS' or answer.upper() == 'L':
+    answer = input('List new player (L) Import entries (W)')
+    if answer.upper() == 'NEW PLAYER' or answer.upper() == 'L':
         slack_name = input('Slack Name: ')
         slack_id = input('ID: ')
 
